@@ -1,5 +1,8 @@
 #  ChurnSense: Predictive Customer Churn Application
 
+![image](https://github.com/M-travis123/Churn-App-P4/assets/149013862/5ee87705-aa91-409a-bc31-c6549be73180)
+
+
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
