@@ -1,5 +1,8 @@
 #  ChurnSense: Predictive Customer Churn Application
 
+![image](https://github.com/M-travis123/Churn-App-P4/assets/149013862/5ee87705-aa91-409a-bc31-c6549be73180)
+
+
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
@@ -98,7 +101,7 @@ This will:
 
 . Open a web browser to view the app.
 
-. Log in to the app using the provided credentials.
+. Log in to the app using the provided credentials. username= nyambura, password=123456
 
 . Test predictions by navigating to the predictions page.
 
@@ -125,7 +128,7 @@ https://medium.com/@nyamburam12/title-understanding-and-utilizing-customer-churn
 
 
 
-## L
+
 
 
 
