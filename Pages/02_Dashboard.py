@@ -15,7 +15,9 @@ st.title(' :bar_chart: My Customer Churn Dashboard')
 
 
 # Load the data
+
 df = pd.read_csv(r'C:\Users\HP\Desktop\P4-Churn App\Churn-App-P4\data\training_data.csv')
+
 
 # Define a function to display visualizations
 def display_visualizations(df):
