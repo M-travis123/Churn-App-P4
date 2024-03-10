@@ -119,7 +119,9 @@ Special thanks to AzubiAfrica for making this posible.
 ##📝 License
 This project is licensed under the MIT License
 
-## L
+## Link to medium article
+
+https://medium.com/@nyamburam12/title-understanding-and-utilizing-customer-churn-prediction-applications-f755bd3bc2df
 
 
 
