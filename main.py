@@ -1,27 +1,40 @@
 import streamlit as st
 import streamlit_authenticator as stauth
 import yaml
+from yaml.loader import SafeLoader
 
-# Display the icon and page name using HTML formatting
-st.markdown("<h1 style='text-align: center; color: black;'>🏠 Home Page</h1>", unsafe_allow_html=True)
 
-# Define the login page content
-def login_page():
-    st.title("Login to Vodafone Churn Predictor")
-    username = st.text_input("Username", value="username")
-    password = st.text_input("Password", type="password", value="password")
-    if st.button("Login"):
-        if username == "username" and password == "password":
-            st.success("Login successful!")
-            st.session_state.is_authenticated = True
-        else:
-            st.error("Authentication failed. Please try again.")
+# Set Streamlit page config
+st.set_page_config(
+    page_title='About',
+    layout='wide',
+    page_icon='🏠'
+)
 
-# Define the main page content
-# Define the main page content
-# Define the main page content
-def main():
-    # Title/Header
+# Load configuration from YAML file
+try:
+    with open('C:/Users/HP/Desktop/P4-Churn App/Churn-App-P4/config.yaml') as file:
+        config = yaml.load(file, Loader=SafeLoader)
+except FileNotFoundError:
+    st.error("Config file not found. Please check the file path.")
+
+# Authenticate users
+authenticator = stauth.Authenticate(
+    config['credentials'],
+    config['cookie']['name'],
+    config['cookie']['key'],
+    config['cookie']['expiry_days'],
+    config['preauthorized']
+)
+
+# User authentication
+name, authentication_status, username = authenticator.login(location='sidebar')
+
+
+if st.session_state["authentication_status"]:
+    authenticator.logout(location='sidebar', key='logout-button')
+
+    # Main content
     st.title("Welcome to Vodafone Churn Predictor")
     st.write("This app helps predict customer churn and provides insights into customer data.")
 
@@ -61,12 +74,11 @@ def main():
     5. For support or inquiries, contact us at monica.nyambura@azubiafrica.org
     """)
 
-# Check if the user is authenticated
-if "is_authenticated" not in st.session_state:
-    st.session_state.is_authenticated = False
-
-# Show login page if not authenticated, otherwise show main page
-if not st.session_state.is_authenticated:
-    login_page()
-else:
-    main()
+elif st.session_state["authentication_status"] is False:
+    st.error('Username/password is incorrect')
+elif st.session_state["authentication_status"] is None:
+    st.info('Enter username and password to use the app.')
+    st.code("""
+            Test Account
+            Username: nyambura
+            Password: 123456""")
