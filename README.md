@@ -101,7 +101,7 @@ This will:
 
 . Open a web browser to view the app.
 
-. Log in to the app using the provided credentials.
+. Log in to the app using the provided credentials. username= nyambura, password=123456
 
 . Test predictions by navigating to the predictions page.
 
@@ -128,7 +128,7 @@ https://medium.com/@nyamburam12/title-understanding-and-utilizing-customer-churn
 
 
 
-## L
+
 
 
 
