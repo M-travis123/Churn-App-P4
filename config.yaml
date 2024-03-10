@@ -1,14 +1,16 @@
 credentials:
   usernames:
-    Monica:
-      email: monica@example.com
+    nyambura:
+      email: nyamburam12@gmail.com
       logged_in: False # Will be managed automatically
-      name: Monica
-      password: '1234' # Make sure to enclose in quotes
+      name: Monica Nyambura
+      password: '123456' # Will be hashed automatically
 cookie:
-  name: monica_cookie
-  key: monica_cookie_key # Must be string
-  expiry_days: 30
+  expiry_days: 0
+  key: cookie_signature_key # Must be string
+  name: cookie_name
 preauthorized:
   emails:
-    - monica@example.com
+    - nyamburam12@gmail.com
+users:
+  name: Monica
