@@ -10,13 +10,17 @@ st.set_page_config(
     layout='wide',
     page_icon='🏠'
 )
+# Get the absolute path to the config file
+config_file_path = 'C:/Users/HP/Desktop/P4-Churn App/Churn-App-P4/config.yaml'
 
 # Load configuration from YAML file
 try:
-    with open('C:/Users/HP/Desktop/P4-Churn App/Churn-App-P4/config.yaml') as file:
-        config = yaml.load(file, Loader=SafeLoader)
+    with open(config_file_path) as file:
+        config = yaml.load(file, Loader=yaml.SafeLoader)
 except FileNotFoundError:
-    st.error("Config file not found. Please check the file path.")
+    st.error(f"Config file not found at {config_file_path}.")
+except Exception as e:
+    st.error(f"An error occurred while loading the config file: {e}")
 
 # Authenticate users
 authenticator = stauth.Authenticate(
