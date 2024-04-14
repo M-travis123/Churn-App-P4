@@ -14,7 +14,7 @@ st.set_page_config(
     layout='wide'
 )
 
-st.title("Churn Prediction Page")
+st.title("Churn Prediction Page 👩‍💼📊")
 
 # Load models
 @st.cache_data(show_spinner='Model Loading')
@@ -91,7 +91,7 @@ def predict():
 
     # Classification 1: Personal Information
     with col1:
-        st.subheader('Personal Information')
+        st.subheader('Personal Information 👤')
         gender = st.selectbox('Gender', options=['Male', 'Female'], key='gender')
         SeniorCitizen = st.selectbox('SeniorCitizen', options=['Yes', 'No'], key='SeniorCitizen')
         Partner = st.selectbox('Partner', options=['Yes', 'No'], key='Partner')
@@ -100,14 +100,14 @@ def predict():
 
     # Classification 2: Service Subscriptions
     with col2:
-        st.subheader('Service Subscriptions')
+        st.subheader('Service Subscriptions 📱')
         PhoneService = st.selectbox('PhoneService', options=['Yes', 'No'], key='PhoneService') 
         MultipleLines = st.selectbox('MultipleLines', options=['Yes', 'No'], key='MultipleLines') 
         InternetService = st.selectbox('InternetService', options=['Fiber optic', 'DSL'], key='InternetService') 
         
     # Classification 3: Security and Backup
     with col3:
-        st.subheader('Security and Backup')
+        st.subheader('Security and Backup 🔒')
         OnlineSecurity = st.selectbox('OnlineSecurity', options=['Yes', 'No'], key='OnlineSecurity')
         OnlineBackup = st.selectbox('OnlineBackup', options=['Yes', 'No'], key='OnlineBackup')
         DeviceProtection = st.selectbox('DeviceProtection', options=['Yes', 'No'], key='DeviceProtection')
@@ -156,8 +156,7 @@ def predict():
         })
         
         st.session_state['df'] = input_features
-        st.form_submit_button('Make Prediction', on_click=make_prediction, kwargs=dict(model=model, encoder=encoder))
-
+        st.form_submit_button('Make Prediction 🔄', on_click=make_prediction, kwargs=dict(model=model, encoder=encoder))
    
 def save_prediction_to_csv(df, prediction, model_name):
     churn_label = "Churn" if prediction[0] == 1 else "Not Churn"
@@ -220,4 +219,3 @@ if __name__ == '__main__':
     else:
          probability_of_no = probability[0][0] * 100
          st.markdown(f"### The employee is predicted to stay with a probability of {round(probability_of_no, 2)}%.")
-         

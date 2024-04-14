@@ -15,6 +15,7 @@ def show_historic_predictions():
     return df
 
 if __name__ == "__main__":
-    st.title('Prediction History')
+    st.title('Prediction History :page_with_curl:')
     historic_df = show_historic_predictions()
     st.dataframe(historic_df)
+
